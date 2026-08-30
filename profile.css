@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* General page styling */
+body {
+    background-color: #ffffff; /* Crisp white background for maximum contrast */
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main card container - Uses Box Model properties & Relative Positioning */
+#profile-container.card {
+    position: relative; /* Establishes positioning context for absolute children */
+    background: linear-gradient(135deg, #000000 40%, #001a4d 100%); /* Striking black to deep blue gradient */
+    width: 350px;
+    margin: 20px;
+    padding: 40px 30px;
+    border: 2px solid #D4AF37; /* Professional gold border */
+    border-radius: 0; /* Sharp edges for a bold, structured look */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Badge - Absolute Positioning */
+#profile-container .badge {
+    position: absolute; /* Positioned relative to #profile-container */
+    top: 15px;
+    right: 15px;
+    background-color: #D4AF37; /* Striking gold */
+    color: #000000; /* Sharp black text */
+    padding: 6px 14px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 0; /* Matching sharp aesthetic */
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Image wrapper for localized relative/absolute relationship */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #ffffff; /* Clean white border */
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    object-fit: cover;
+}
+
+/* Decorative Icon - Absolute Positioning overlapping the image */
+.deco-icon {
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    width: 35px;
+    height: 35px;
+    background-color: #0033a0; /* Deep blue */
+    border-radius: 50%;
+    border: 2px solid #D4AF37; /* Gold accent border */
+}
+
+/* Descendant selector & typography styling */
+#profile-container .user-name {
+    margin: 10px 0 5px 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff; /* White title against black/blue background */
+}
+
+.bio {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif; /* Helvetica Neue for clean body copy */
+}
+
+.contact-btn {
+    background-color: #D4AF37; /* Gold button */
+    color: #000000;
+    border: none;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #ffffff; /* Shifts to white on hover */
+    color: #0033a0; /* Deep blue text on hover */
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+/* Media Query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    #profile-container.card {
+        width: 85%; /* Responsive width */
+        padding: 30px 15px;
+        /* Stack elements vertically (default block behavior handles this, but flex ensures order if needed) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Resize and adjust badge placement for mobile */
+    #profile-container .badge {
+        font-size: 0.65em;
+        padding: 5px 10px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .deco-icon {
+        width: 25px;
+        height: 25px;
+        bottom: 5px;
+        left: 0;
+    }
+    
+    #profile-container .user-name {
+        font-size: 1.5em;
+    }
+}
